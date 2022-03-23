@@ -3,7 +3,6 @@ import { useFonts, Montserrat_400Regular, Montserrat_700Bold } from '@expo-googl
 
 import Basket from './src/screen/Basket';
 import AppLoading from 'expo-app-loading';
-import Basket from './src/screen/Basket/Basket';
 import mock from './src/mocks/basket';
 
 export default function App() {
@@ -17,7 +16,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <Basket {...mock} />
       <StatusBar></StatusBar>
     </SafeAreaView>

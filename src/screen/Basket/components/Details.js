@@ -1,7 +1,7 @@
-import { Image, View } from 'react-native';
+import { Image, View, TouchableOpacity } from 'react-native';
 import TextDefault from '../../../components/TextDefault';
 
-export default function Details({ name, imageFarm, nameFarm, description, price }) {
+export default function Details({ name, imageFarm, nameFarm, description, price, buy }) {
     return <>
         <TextDefault style={styles.name}> {name} </TextDefault>
         <View style={styles.imageBasket}>
@@ -10,6 +10,13 @@ export default function Details({ name, imageFarm, nameFarm, description, price 
         </View>
         <TextDefault style={styles.description}> {description}</TextDefault>
         <TextDefault style={styles.price}>{price}</TextDefault>
+
+        <TouchableOpacity style={styles.button}>
+            <TextDefault style={styles.textButton}>
+                {buy}
+            </TextDefault>
+        </TouchableOpacity>
+        
     </>
 }
 
@@ -44,5 +51,18 @@ const styles = {
     imageBasket: {
         flexDirection: 'row',
         paddingVertical: 12
+    },
+    button:{
+        marginTop: 16,
+        backgroundColor :'#2A9F85',
+        paddingVertical:16,
+        borderRadius:6
+    },
+    textButton: {
+        textAlign: "center",
+        color :'#ffffff',
+        fontSize:16,
+        lineHeight:26,
+        fontWeight:'bold'
     }
 }
